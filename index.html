@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>RPG</title>
+  <!-- Favicon -->
+  <link rel='icon' href='./assets/images/logo_white.png' type='image/x-icon' />
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/custom.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="main-wrapper">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <div class="mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+          </ul>
+        </div>
+        <div class="navbar-nav navbar-right">
+          <a href="index.html" class="nav-link nav-link-lg nav-link-user">
+            <img alt="image" src="./assets/images/logo_white.png" class="" width="5">
+          </a>
+        </div>
+      </nav>
+      <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="index.html">Role Playing Game</a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="index.html">RPG</a>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="menu-header">Tools</li>
+            <li class="active"><a class="nav-link" href="index.html"><i class="fas fa-dice-d20"></i><span>Dados</span></a></li>
+            <li class="menu-header">7° Mar</li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-globe"></i><span>Théah</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="./pages/theah.html">Théah</a></li>
+                <li><a class="nav-link" href="./pages/nacoes.html">Nações</a></li>
+              </ul>
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1>Rolagem de Dados</h1>
+          </div>
+          <div class="section-body">
+            <h2 class="section-title">Rolagem de Dados</h2>
+            <div class="row">
+              <div class="col-xl-7">
+                <div class="card">
+                  <div class="card-header bg-white align-items-center d-flex justify-content-between">
+                    <h4 style="color: #6c7585">Rolagem de Dados</h4>
+                    <div class="d-flex align-items-center justify-content-end">
+                      <button class="btn btn-primary" onclick="rolar_dados()"><i class="fas fa-sync-alt mr-1"></i>Rolar Dados</button>
+                    </div>
+                  </div>
+                  <div class="card-body" style="min-height: 100px;"">
+                    <div class="row">
+                      <div class="col-md-3 mb-3">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="fas fa-layer-group"></i>
+                            </div>
+                          </div>
+                          <select class="custom-select" id="quantidade" required>
+                            <option selected value="1">01</option>
+                            <option value="2">02</option>
+                            <option value="3">03</option>
+                            <option value="4">04</option>
+                            <option value="5">05</option>
+                            <option value="6">06</option>
+                            <option value="7">07</option>
+                            <option value="8">08</option>
+                            <option value="9">09</option>
+                            <option value="10">10</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="fas fa-dice"></i>
+                            </div>
+                          </div>
+                          <select class="custom-select" id="select_dados" required>
+                            <option selected value="4">D4</option>
+                            <option value="6">D6</option>
+                            <option value="8">D8</option>
+                            <option value="10">D10</option>
+                            <option value="12">D12</option>
+                            <option value="20">D20</option>
+                            <option value="100">D100</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="fas fa-plus"></i>
+                            </div>
+                          </div>
+                          <input type="text" class="form-control num" id="vantagem" value="0" maxlength="3" placeholder="Ex: 3">
+                        </div>
+                      </div>
+                      <div class="col-xl-12 text-center">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-5">
+                <div class="card">
+                  <div class="card-header bg-white align-items-center d-flex justify-content-between" style="vertical-align: middle !important;">
+                    <h4 style="color: #6c7585">Resultado: <b id="total" style="color:#34395e;"></b></h4>
+                    <button class="btn btn-danger btn-icon" onclick="reset()"><i class="fas fa-broom mr-1"></i></button>
+                  </div>
+                  <div class="card-body" style="min-height: 100px;">
+                    <div id="resultado">
+                      <div id="rolagem"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="main-footer">
+        <div class="footer-left">
+          Copyright &copy; 2022 <div class="bullet"></div> Design By <a href="./index.html">ROLE PLAYING GAME</a>
+        </div>
+        <div class="footer-right">
+          2.3.0
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- General JS Scripts -->
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="./assets/js/popper.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+  <script src="./assets/js/jquery.nicescroll.min.js"></script>
+  <script src="./assets/js/moment.min.js"></script>
+  <script src="./assets/js/stisla.js"></script>
+  <script src="./assets/js/fontawesome.js"></script>
+
+  <!-- JS Libraies -->
+
+  <!-- Template JS File -->
+  <script src="./assets/js/scripts.js"></script>
+  <script src="./assets/js/custom.js"></script>
+
+  <!-- Page Specific JS File -->
+</body>
+</html>
