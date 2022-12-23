@@ -138,7 +138,11 @@
   <!-- Template JS File -->
   <script src="../assets/js/scripts.js"></script>
   <script src="../assets/js/custom.js"></script>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      Chocolat(document.querySelectorAll('.gallery-fw .gallery-item'))
+    })
+  </script>
   <!-- Page Specific JS File -->
 </body>
 </html>
