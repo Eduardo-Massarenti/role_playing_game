@@ -195,7 +195,7 @@
 
         // Card
         let card = document.createElement('div')
-        if (dados = 20 && conta >= 20 ) {
+        if (dados = 20 && parseInt(conta) == 20 ) {
           card.classList.add('card', 'card-result-red')
         } else {
           card.classList.add('card', 'card-result')
@@ -216,7 +216,7 @@
         cardB.classList.add('card-body', 'text-right')
 
         let h3 = document.createElement('h3')
-        if (dados = 20 && conta >= 20 ) {
+        if (dados = 20 && parseInt(conta) == 20 ) {
           h3.classList.add('card-value', 'text-danger', 'mb-0')
         } else {
         h3.classList.add('card-value', 'text-gray', 'mb-0')
@@ -224,7 +224,7 @@
         h3.textContent=`${result}`
 
         let h6 = document.createElement('h6')
-        if (dados = 20 && conta >= 20 ) {
+        if (dados = 20 && parseInt(conta) == 20 ) {
           h6.classList.add('mb-0', 'text-danger')
           h6.textContent=`[ ${conta} + ${vant} ]`
         } else {
